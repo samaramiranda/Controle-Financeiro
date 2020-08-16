@@ -5,6 +5,8 @@ const balanceDisplay = document.querySelector("#balance")
 const form = document.querySelector("#form")
 const inputTransactionName = document.querySelector("#text")
 const inputTransactionAmount = document.querySelector("#amount")
+const body = document.querySelector("body")
+const btnDarkMode = document.querySelector("#darkmode")
 
 const localStorageTransactions = JSON.parse(localStorage
   .getItem("transactions"))
@@ -108,5 +110,11 @@ const handleFormSubmit = event => {
 
   cleanInputs()
 }
+
+const darkMode = () => {
+  body.classList.toggle("dark")
+}
+
+btnDarkMode.addEventListener("click", darkMode)
 
 form.addEventListener("submit", handleFormSubmit)
